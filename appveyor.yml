@@ -2,10 +2,6 @@ environment:
   stack_root: 'C:\sr'
   tmp: 'C:\tmp'
 
-cache:
-  - '%LocalAppData%\Programs\stack -> stack.yaml'
-  - 'C:\sr -> stack.yaml'
-
 before_build:
   - choco install haskell-stack
 
