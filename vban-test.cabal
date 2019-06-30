@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 0e04cd3d68a8da016a4d33b0c4accc9ce7634a22870f853b3325895736ff7c95
+-- hash: 2fe54c8d5f58517f26f862c39d2d9fc8e8dc8ae4bc787afba7b321430de0dfa5
 
 name:           vban-test
 version:        0.1.0.0
@@ -38,6 +38,8 @@ library
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints
   build-depends:
       base >=4.11 && <10
+    , binary
+    , network
     , rio >=0.1.7.0
   default-language: Haskell2010
 
@@ -50,6 +52,8 @@ executable vban-test-exe
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.11 && <10
+    , binary
+    , network
     , optparse-simple
     , rio >=0.1.7.0
     , vban-test
@@ -66,7 +70,9 @@ test-suite vban-test-test
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.11 && <10
+    , binary
     , hspec
+    , network
     , rio >=0.1.7.0
     , vban-test
   default-language: Haskell2010
