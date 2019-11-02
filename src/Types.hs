@@ -1,12 +1,15 @@
 {-# LANGUAGE NoImplicitPrelude #-}
 module Types where
 
-import RIO
-import RIO.Process
+import           RIO
+import           RIO.Process
 
 -- | Command line arguments
 data Options = Options
   { optionsVerbose :: !Bool
+  , optionsRxAddr :: !Text
+  , optionsTxAddr :: !Text
+  , optionsGainPerSampleDb :: !Double
   }
 
 data App = App

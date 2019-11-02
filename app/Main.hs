@@ -5,6 +5,7 @@ module Main (main) where
 import Import
 import Run
 import RIO.Process
+import qualified RIO.Text as T
 import Options.Applicative.Simple
 import qualified Paths_vban_test
 
@@ -19,6 +20,22 @@ main = do
                  <> short 'v'
                  <> help "Verbose output?"
                   )
+       <*> strOption ( long "listen"
+                    <> short 'l'
+                    <> help "Listen address"
+                    <> value (T.pack "0.0.0.0:6900")
+                    <> showDefault
+                     )
+       <*> strOption ( long "remote"
+                    <> short 'r'
+                    <> help "Remote address"
+                     )
+       <*> option auto ( long "gain"
+                      <> short 'g'
+                      <> help "Gain per sample [dB]"
+                      <> value 0.0001
+                      <> showDefault
+                       )
     )
     empty
   lo <- logOptionsHandle stderr (optionsVerbose options)

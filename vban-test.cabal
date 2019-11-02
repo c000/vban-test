@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 2fe54c8d5f58517f26f862c39d2d9fc8e8dc8ae4bc787afba7b321430de0dfa5
+-- hash: e87f6b4f1f8ba21b195052cdccef6a46ba428495248dd3c548d012f89396352a
 
 name:           vban-test
 version:        0.1.0.0
@@ -41,6 +41,7 @@ library
     , binary
     , network
     , rio >=0.1.7.0
+    , vector
   default-language: Haskell2010
 
 executable vban-test-exe
@@ -57,6 +58,7 @@ executable vban-test-exe
     , optparse-simple
     , rio >=0.1.7.0
     , vban-test
+    , vector
   default-language: Haskell2010
 
 test-suite vban-test-test
@@ -75,4 +77,5 @@ test-suite vban-test-test
     , network
     , rio >=0.1.7.0
     , vban-test
+    , vector
   default-language: Haskell2010
